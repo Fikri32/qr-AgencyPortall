@@ -31,7 +31,7 @@ class Users extends BaseController
                 // var_dump($session->has('id'));
                 // exit;
 
-                return redirect()->to(base_url('/datapasien'));
+                return redirect()->to(base_url('/employee'));
             } else {
                 echo ('salah');
                 return redirect()->back();

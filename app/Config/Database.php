@@ -35,7 +35,7 @@ class Database extends Config
         'hostname' => 'localhost',
         'username' => 'root',
         'password' => '',
-        'database' => 'kartikahospital',
+        'database' => 'agencyportal',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,

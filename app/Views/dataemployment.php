@@ -19,30 +19,34 @@
         <table id="example" class="table table-striped" style="width:100%">
             <thead>
                 <tr class="text-left" style="font-size: 13px;">
-                    <th>NoReg</th>
-                    <th>Nama</th>
-                    <th>Jenis Kelamin</th>
-                    <th>No Telepon</th>
-                    <th>Tanggal Hasil</th>
-                    <th>Hasil</th>
+                    <th>ecNo</th>
+                    <th>ecDate</th>
+                    <th>nameW</th>
+                    <th>nameE</th>
+                    <th>address</th>
+                    <th>salary</th>
+                    <th>offDays</th>
+                    <th>stat</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($Datapasien as $row) : ?>
+                <?php foreach ($dataec as $row) : ?>
                     <tr class="text-left" style="font-size: 13px;">
-                        <td><?= $row['NoReg']; ?></td>
-                        <td><?= $row['Nama']; ?></td>
-                        <td><?= $row['JenisKelamin']; ?></td>
-                        <td><?= $row['NoTelp']; ?></td>
-                        <td><?= $row['TglHasil']; ?></td>
-                        <td><?= $row['Hasil']; ?></td>
+                        <td><?= $row['ecNo']; ?></td>
+                        <td><?= $row['ecDate']; ?></td>
+                        <td><?= $row['nameW']; ?></td>
+                        <td><?= $row['nameE']; ?></td>
+                        <td><?= $row['address']; ?></td>
+                        <td><?= $row['salary']; ?></td>
+                        <td><?= $row['offDays']; ?></td>
+                        <td><?= $row['stat']; ?></td>
                         <td>
-                            <a href="#" class="qrcode" data-bs-toggle="modal" data-bs-target="#exampleModal" id="qrcode" data-id="<?= $row['NoReg'] ?>" onclick=qrcode(this)><span><i class="bx bx-qr" style="color: #096b39;font-size : 18px;"></i></span></a>
+                            <a href="#" class="qrcode" data-bs-toggle="modal" data-bs-target="#exampleModal" id="qrcode" data-id="<?= $row['ecNo'] ?>" onclick=qrcode(this)><span><i class="bx bx-qr" style="color: #096b39;font-size : 18px;"></i></span></a>
 
-                            <a href="<?= base_url('edit/' . $row['NoReg']) ?>"><span><i class="bx bxs-pencil mx-1" style="color: #52525c;font-size : 18px;"></i></span></a>
+                            <a href="<?= base_url('edit/' . $row['ecNo']) ?>"><span><i class="bx bxs-pencil mx-1" style="color: #52525c;font-size : 18px;"></i></span></a>
 
-                            <input type="hidden" name="_method" value="DELETE"><a href="<?= base_url('datapasien/' . $row['NoReg']); ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data?');"><span><i class="bx bxs-trash" style="color: #52525c;font-size : 18px;"></i></span></a>
+                            <input type="hidden" name="_method" value="DELETE"><a href="<?= base_url('employee/' . $row['ecNo']); ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data?');"><span><i class="bx bxs-trash" style="color: #52525c;font-size : 18px;"></i></span></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

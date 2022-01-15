@@ -4,12 +4,12 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class DataPasienModel extends Model
+class DataEcModel extends Model
 {
-    protected $table      = 'Datapasien';
-    protected $primaryKey = 'NoReg';
+    protected $table      = 'dataec';
+    protected $primaryKey = 'ecNo';
     protected $useAutoIncrement = true;
-    protected $allowedFields = ['NoReg', 'Nama', 'NIK', 'JenisKelamin', 'TglLahir', 'Negara', 'NoTelp', 'TglHasil', 'Hasil', 'GenN', 'Orf1ab'];
+    protected $allowedFields = ['ecNo', 'ecDate', 'nameW', 'nameE', 'address', 'salary', 'offDays', 'stat'];
 
     // public function rules()
     // {
@@ -32,29 +32,29 @@ class DataPasienModel extends Model
     //     ];
     // }
 
-    public function getDataPasien($NoReg = false)
+    public function getDataEc($ecNo = false)
     {
-        if ($NoReg === false) {
+        if ($ecNo === false) {
             return $this->findAll();
         } else {
-            return $this->getWhere(['NoReg' => $NoReg]);
+            return $this->getWhere(['ecNo' => $ecNo]);
         }
     }
 
     public function simpan($data)
     {
-        return $this->db->table('Datapasien')->insert($data);
+        return $this->db->table('dataec')->insert($data);
     }
 
-    public function editData($data, $NoReg)
+    public function editData($data, $ecNo)
     {
-        $query = $this->db->table('Datapasien')->update($data, array('NoReg' => $NoReg));
+        $query = $this->db->table('dataec')->update($data, array('ecNo' => $ecNo));
         return $query;
     }
 
-    public function hapus($NoReg)
+    public function hapus($ecNo)
     {
-        $query = $this->db->table('Datapasien')->delete(array('NoReg' => $NoReg));
+        $query = $this->db->table('dataec')->delete(array('ecNo' => $ecNo));
         return $query;
     }
 }

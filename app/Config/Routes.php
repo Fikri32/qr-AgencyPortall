@@ -33,12 +33,12 @@ $routes->setAutoRoute(false);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/user_view', 'Users::index');
-$routes->get('/datapasien', 'DataPasien::index', ['filter' => 'usersAuth']);
-$routes->get('/datapasien/tambah', 'DataPasien::tambah', ['filter' => 'usersAuth']);
-$routes->post('/datapasien/simpan', 'DataPasien::simpan', ['filter' => 'usersAuth']);
-$routes->get('/edit/(:any)', 'DataPasien::edit/$1', ['filter' => 'usersAuth']);
-$routes->get('/datapasien/(:any)', 'DataPasien::delete/$1', ['filter' => 'usersAuth']);
-$routes->post('/datapasien/update/(:any)', 'DataPasien::update/$1', ['filter' => 'usersAuth']);
+$routes->get('/employee', 'DataEcController::index', ['filter' => 'usersAuth']);
+$routes->get('/employee/tambah', 'DataEcController::tambah', ['filter' => 'usersAuth']);
+$routes->post('/employee/simpan', 'DataEcController::simpan', ['filter' => 'usersAuth']);
+$routes->get('/edit/(:any)', 'DataEcController::edit/$1', ['filter' => 'usersAuth']);
+$routes->get('/employee/(:any)', 'DataEcController::delete/$1', ['filter' => 'usersAuth']);
+$routes->post('/employee/update/(:any)', 'DataEcController::update/$1', ['filter' => 'usersAuth']);
 // Login
 $routes->post('/user/login', 'Users::process');
 $routes->get('/user/logout', 'Users::logout');
@@ -46,9 +46,9 @@ $routes->post('/user/changepw', 'Users::changepw');
 $routes->get('/user/password', 'Users::password');
 
 
-$routes->get('/kosong/(:any)','DataPasien::kosong/$1');
-$routes->get('/qrcode/(:any)','DataPasien::qrcode/$1');
-$routes->get('/hasil/(:any)','DataPasien::hasil/$1');
+$routes->get('/kosong/(:any)','DataEcController::kosong/$1');
+$routes->get('/qrcode/(:any)','DataEcController::qrcode/$1');
+$routes->get('/hasil/(:any)','DataEcController::hasil/$1');
 
 
 /*
