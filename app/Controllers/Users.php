@@ -6,7 +6,7 @@ use App\Models\UsersModel;
 
 class Users extends BaseController
 {
-  
+
     public function index()
     {
         return view('login');
@@ -33,11 +33,12 @@ class Users extends BaseController
 
                 return redirect()->to(base_url('/employee'));
             } else {
-                echo ('salah');
+                // echo ('salah');
+                session()->setFlashdata('error', 'Wrong Password!');
                 return redirect()->back();
             }
         } else {
-            session()->setFlashdata('error', 'Email atau Password salah!');
+            session()->setFlashdata('error', 'Wrong Email or Password');
             return redirect()->back();
         }
     }
@@ -57,8 +58,8 @@ class Users extends BaseController
     public function changepw()
     {
         $data = [
-            'password' =>password_hash($this->request->getVar('password'), PASSWORD_BCRYPT)
-            
+            'password' => password_hash($this->request->getVar('password'), PASSWORD_BCRYPT)
+
         ];
         $session = session();
         $session_id = $session->__get('id');
@@ -67,11 +68,10 @@ class Users extends BaseController
         // dd($simpan);
 
         if ($simpan) {
-            session()->setFlashdata('pesan', 'Data Berhasil Diubah.');
-            return redirect()->to('/datapasien');
+            session()->setFlashdata('pesan', 'Password changed successfully.');
+            return redirect()->to('/dataemployment');
         } else {
             echo "Error";
         }
-
     }
 }

@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 <div style="padding-top: 30px; padding-bottom: 30px;">
-    <h2 style="font-weight:600;"><span style="display:inline; vertical-align: middle;"><i class="bx bxs-lock"></i></span> Ganti Password</h2>
+    <h2 style="font-weight:600;"><span style="display:inline; vertical-align: middle;"><i class="bx bxs-lock"></i></span> Change Password</h2>
 </div>
 <div class="card w-80 shadow p-4 rounded-3" style="margin-right: 14px; border:none; ">
     <form action="<?= base_url('user/changepw') ?>" method="post">
@@ -19,7 +19,7 @@
         </div>
 
         <div class="d-grid gap-2 mt-4">
-            <button type="submit" class="btn btn-primary btn-md btn-block mb-3 mt-3" style="background: #096b39;">Submit</button>
+            <button type="submit" class="btn btn-md btn-block mb-3 mt-3" style="background: #001a57; color:white">Submit</button>
         </div>
     </form>
 

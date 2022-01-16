@@ -17,14 +17,14 @@ class DataEcController extends BaseController
 
     public function tambah()
     {
-        echo view('addpasien');
+        echo view('addec');
     }
 
     public function edit($id)
     {
         $model = new DataEcModel;
         $data['row'] = $model->where('ecNo', $id)->first();
-        echo view('editpasien', $data);
+        echo view('editdataec', $data);
     }
 
 
@@ -45,7 +45,7 @@ class DataEcController extends BaseController
         $simpan = $emplyee->simpan($data);
 
         if ($simpan) {
-            session()->setFlashdata('pesan', 'Data Berhasil Ditambahkan.');
+            session()->setFlashdata('pesan', 'Data added successfully.');
             return redirect()->to('/employee');
         } else {
             echo "Error";
@@ -70,7 +70,7 @@ class DataEcController extends BaseController
         // dd($simpan);
 
         if ($simpan) {
-            session()->setFlashdata('pesan', 'Data Berhasil Diubah.');
+            session()->setFlashdata('pesan', 'Data has changed successfully.');
             return redirect()->to('/employee');
         } else {
             echo "Error";
@@ -81,7 +81,7 @@ class DataEcController extends BaseController
     {
         $pasien = new DataEcModel();
         $data['dataemployee'] = $pasien->delete($ecNo);
-        session()->setFlashdata('pesan', 'Data Telah Dihapus.');
+        session()->setFlashdata('pesan', 'One data has been deleted.');
         return redirect()->to('/employee');
     }
 
@@ -110,7 +110,7 @@ class DataEcController extends BaseController
     public function hasil($ecNo)
     {
         $model = new DataEcModel;
-        $data['row'] = $model->where('no$ecNo', $ecNo)->first();
+        $data['row'] = $model->where('ecNo', $ecNo)->first();
         echo view('detailhasil', $data);
     }
 }

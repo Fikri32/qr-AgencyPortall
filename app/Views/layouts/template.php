@@ -4,9 +4,8 @@
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Kartika Hospital</title>
+    <title>Agency Portal</title>
 
-    <!-- <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'> -->
     <link rel="stylesheet" href="<?= base_url('bootstrap/css/bootstrap.css') ?>">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="<?= base_url('style.css') ?>">
@@ -26,21 +25,21 @@
             <nav class="nav">
                 <div>
                     <a href="<?= base_url() ?>">
-                        <img src="<?= base_url('assets/rata-flip.png') ?>" alt="KARTIKA HOSPITAL" style="height: 50px; padding-left:3px; margin-bottom:40px;" />
+                        <img src="<?= base_url('assets/agencyportal1.png') ?>" alt="Indonesial Labour" style="height: 50px; padding-left:9px; margin-bottom:40px;" />
                     </a>
 
                     <div class="nav_list">
                         <a href="<?= base_url('/employee/tambah') ?>" class="nav_link">
                             <i class='bx bxs-user nav_icon'></i>
-                            <span class="nav_name">Tambah Data</span>
+                            <span class="nav_name">Add Data</span>
                         </a>
                         <a href="<?= base_url('employee') ?>" class="nav_link">
                             <i class='bx bx-detail nav_icon'></i>
-                            <span class="nav_name">Data Hasil SWAB</span>
+                            <span class="nav_name">Employment Contract <br>List</span>
                         </a>
                         <a href="<?= base_url('/user/password') ?>" class="nav_link">
                             <i class='bx bxs-key nav_icon'></i>
-                            <span class="nav_name">Ganti Password</span>
+                            <span class="nav_name">Change Password</span>
                         </a>
                     </div>
                 </div>

@@ -2,8 +2,8 @@
 
 :root {
   --header-height: 3rem;
-  --nav-width: 68px;
-  --first-color: #096b39;
+  --nav-width: 75px;
+  --first-color: #001a57;
   --first-color-light: #fff;
   --white-color: #afa5d9;
   --body-font: "Nunito", sans-serif;
@@ -35,11 +35,11 @@ a {
 }
 
 a.page-link {
-  color: #096b39;
+  color: #001a57;
 }
 
 .page-item.active .page-link {
-  background-color: #096b39;
+  background-color: #001a57;
 }
 
 .header {
@@ -55,7 +55,7 @@ a.page-link {
   background-color: var(--white-color);
   z-index: var(--z-fixed);
   transition: 0.5s;
-  background-color: #096b39;
+  background-color: #001a57;
 }
 
 .header_toggle {
