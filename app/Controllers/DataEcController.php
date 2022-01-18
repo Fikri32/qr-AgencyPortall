@@ -99,7 +99,7 @@ class DataEcController extends BaseController
             ->setErrorCorrection('high')
             ->setForegroundColor(array('r' => 0, 'g' => 0, 'b' => 0, 'a' => 0))
             ->setBackgroundColor(array('r' => 255, 'g' => 255, 'b' => 255, 'a' => 0))
-            ->setLabel('Scan Qr Code')
+            // ->setLabel('Scan Qr Code')
             ->setLabelFontSize(16)
             ->setImageType(QrCode::IMAGE_TYPE_PNG);
         $data = '<img style="margin-left:auto;margin-right:auto;"  src="data:' . $qrCode->getContentType() . ';base64,' . $qrCode->generate() . '" id=img  download = Data.png />';

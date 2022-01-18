@@ -69,7 +69,7 @@ class Users extends BaseController
 
         if ($simpan) {
             session()->setFlashdata('pesan', 'Password changed successfully.');
-            return redirect()->to('/dataemployment');
+            return redirect()->to('/user/password');
         } else {
             echo "Error";
         }
