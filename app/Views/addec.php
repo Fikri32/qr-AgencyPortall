@@ -5,6 +5,20 @@
     <h2 style="font-weight:600;"><span style="display:inline; vertical-align: middle;"><i class="bx bxs-user-plus"></i></span> Add Data</h2>
 </div>
 <div class="card w-80 shadow p-4 rounded-3" style="margin-right: 14px; border:none; ">
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+        -moz-appearance: textfield;
+        }
+    </style>
+
     <form action="<?= base_url('employee/simpan') ?>" method="post">
         <div class="row">
             <div class="col-md-6 col-sm-12">
@@ -14,9 +28,10 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="bx bxs-id-card bx-sm"></i></span>
                         </div>
-                        <input type="text" name="ecnumb" class="form-control" placeholder="Employment Contract Number" aria-label="No Registrasi" aria-describedby="basic-addon1" autocomplete="off" required>
+                        <input type="number" name="ecnumb" class="form-control" placeholder="Employment Contract Number" aria-label="No Registrasi" aria-describedby="basic-addon1" autocomplete="off" required>
                     </div>
                 </div>
+
                 <div class="form-group was-validated">
                     <label for="exampleFormControlInput1">EC Date</label>
                     <div class="input-group mb-3">
@@ -26,6 +41,7 @@
                         <input type="date" name="ecdate" class="form-control" placeholder="Employment Contract Date" aria-label="EC Date" aria-describedby="basic-addon1" autocomplete="off" required>
                     </div>
                 </div>
+
                 <div class="form-group was-validated">
                     <label for="exampleFormControlInput1">Name Of Worker</label>
                     <div class="input-group mb-3">
@@ -35,6 +51,7 @@
                         <input type="text" name="worker" class="form-control" placeholder="Name of Worker" aria-label="Nama" aria-describedby="basic-addon1" autocomplete="off" required>
                     </div>
                 </div>
+                
                 <div class="form-group was-validated">
                     <label for="exampleFormControlInput1">Name of Employer</label>
                     <div class="input-group mb-3">

@@ -24,15 +24,7 @@
 
 </head>
 
-<!-- <body oncontextmenu='return true' class='snippet-body'> -->
-
 <body class="ml-30" style="height: 100%; background-color:#F4F4F4;">
-    <!-- <header class="header" id="header">
-        <div class="header_toggle">
-            <img src="#" alt="KARTIKA HOSPITAL" style="height: 50px;">
-        </div>
-    </header> -->
-
     <!--Container Main start-->
     <div class="container">
         <div class="row">
@@ -46,11 +38,9 @@
                 <h3 class="mb-5 " style="font-size:24px; font-weight:700">Fungsi Ketenagakerjaan KBRI Singapura</h3>
                 <div style="width:60px; height:1px; border-bottom: 2px solid #214384; margin:auto;"></div>
                 <h6 class="mt-1 mb-2" style="font-size:16px; font-weight:500;">Check Employment Contract</h6>
-
             </div>
 
             <div class="row justify-content-center">
-
                 <div class="col-md-6 ">
                     <table class="table table-bordered dataTables-example table-responsive" style="width: 100% !important; margin:auto;">
                         <tbody class="" style="font-size: 13px; font-weight:700; color:#676A6C">
@@ -77,11 +67,11 @@
                             </tr>
                             <tr>
                                 <td>Working Address</td>
-                                <td><?= $row['address']; ?></td>
+                                <td id="address"><?= $row['address']; ?></td>
                             </tr>
                             <tr>
                                 <td>Salary (SGD)</td>
-                                <td><?= $row['salary']; ?></td>
+                                <td id="salary"><?= $row['salary']; ?></td>
                             </tr>
                             <tr>
                                 <td>Off Days</td>
@@ -102,20 +92,32 @@
         </div>
     </div>
 
-
-
     <!--Container Main end-->
-
-    <!-- <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script> -->
     <script src="<?= base_url('bootstrap/js/bootstrap.js') ?>"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <!-- <script type="text/javascript">
-        var tgl_test = "";
-        var hasil = "";
-        var tgl_lahir = ""
-        var nama = ""
-        alert('Hasil pemeriksaan SWAB PCR pada tanggal ' + tgl_test + ' Dengan hasil ' + hasil + ' Atas nama ' + nama + ' Dengan Tanggal lahir ' + tgl_lahir + ' ini Valid dan Sah.')
-    </script> -->
+    <script>
+        // sensor address
+        var address = $("#address").text()
+        var addLength = address.length
+        var ASCII_dump = []
+        for(i = 0; i < addLength; i++) {
+            if (i > 5 && i < addLength - 6) {
+                if (address.charCodeAt(i) == 32) {
+                    ASCII_dump.push(32)
+                } else {
+                    ASCII_dump.push(42)
+                }
+            }else{
+                ASCII_dump.push(address.charCodeAt(i))
+            }
+        }
+        $("#address").html(String.fromCharCode(...ASCII_dump))
+
+        // format salary
+        var salary = $("#salary").text()
+        var parsedSalary = parseFloat(salary)
+        $("#salary").html(parsedSalary)
+    </script>
 </body>
 <!-- </body> -->
 

@@ -27,7 +27,6 @@ class DataEcController extends BaseController
         echo view('editdataec', $data);
     }
 
-
     public function simpan()
     {
         $data = [
@@ -107,6 +106,7 @@ class DataEcController extends BaseController
 
         return $data;
     }
+
     public function hasil($ecNo)
     {
         $model = new DataEcModel;
