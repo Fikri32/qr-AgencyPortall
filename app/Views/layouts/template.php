@@ -4,6 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel=”icon” href=”<?= base_url('favicon.ico') ?>”>
     <title>Agency Portal</title>
 
     <link rel="stylesheet" href="<?= base_url('bootstrap/css/bootstrap.css') ?>">
