@@ -98,8 +98,8 @@
                 </div>
 
                 <div class="row justify-content-center">
-                    <div class="col-md-6" style="margin-left: 10px; margin: right 10px;">
-                        <table class="table table-bordered dataTables-example table-responsive" style="width: 100% !important; margin:auto;">
+                    <div class="col-md-6" style="margin-left: 10px; margin-right: 10px;">
+                        <table class="table table-bordered dataTables-example table-responsive" style="width: 100% !important; margin:0 auto;" align="center">
                             <tbody class="" style="font-size: 13px; font-weight:700; color:#676A6C">
                                 <!-- <tr style="background-color: #001a57">
                                     <td colspan="2">
